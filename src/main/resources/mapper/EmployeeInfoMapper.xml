@@ -1,0 +1,14 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.data.mapper.EmployeeInfoMapper">
+    <select id="selectByPk" parameterType="java.lang.String"
+                                   resultType="com.demo.data.entity.EmployeeInfoEntity">
+        select EMPLOYEE_ID          As employeeId
+               ,CONST_CODE       As constCode
+               ,LOGIN_ID     As loginId
+               ,FIRST_NAME  As firstName
+               ,LAST_NAME  As lastName
+        from EMPLOYEE_INFO
+        where EMPLOYEE_ID = #{employeeId}
+    </select>
+</mapper>

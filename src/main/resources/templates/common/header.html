@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>メニュー</title>
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="logoparent">
+    <div>
+      <img class="box" src="/images/logo.jpg" style="color: red;">
+      <p class="box">勤怠情報システム</p>
+    </div>
+    <div class="logout">
+      <div class="box">
+        <form th:object="${loginInfo}">
+          <div class="box" th:text="*{roleName}" ></div>
+          <p class="box">:</p>
+          <div class="box" th:text="*{firstName}" ></div>
+          <div class="box" th:text="*{lastName}" ></div>
+          <p class="box">    </p>
+        </form>
+      </div>
+      <div class="box">
+        <form action="#" th:action="@{/logout}" method="POST">
+          <input type="submit" value="ログアウト" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

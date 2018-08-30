@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample App</title>
+</head>
+<body>
+  <div align="center" class="box">
+    <img src="/images/logo.jpg" alt="">
+    <h3>勤怠情報システム</h3>
+    <h5>新富町バージョン</h5>
+  </div>
+  <div align="center" class="box">
+    <form role="form" id="login" th:action="@{/login}" method="post">
+      <div>
+        <input type="text" id="username" name="username" autofocus="autofocus"
+          placeholder="ログインID" /><br> <input type="password" id="password"
+          name="password" placeholder="PASSWORD" />
+      </div>
+      <div>
+        <button type="submit">ログイン</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.data.mapper.ConstInfoMapper">
+    <select id="selectByPk" parameterType="java.lang.String"
+                                   resultType="com.demo.data.entity.ConstInfoEntity">
+        select CONST_CODE          As constCode
+               ,CONST_NAME       As constName
+        from CONST_INFO
+        where CONST_CODE = #{constCode}
+    </select>
+</mapper>

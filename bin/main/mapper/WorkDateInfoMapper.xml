@@ -1,0 +1,16 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.data.mapper.WorkDateInfoMapper">
+    <select id="selectByEmployeeId" parameterType="java.lang.String"
+                                   resultType="com.demo.data.entity.WorkDateInfoEntity">
+        select EMPLOYEE_ID          As employeeId
+               ,WORK_YEAR       As workYear
+               ,WORK_MONTH       As workMonth
+               ,CONST_CODE       As constCode
+               ,CONST_NAME       As constName
+               ,WORK_DATE       As workDate
+        from WORK_DATE_INFO
+        where EMPLOYEE_ID = #{employeeId}
+        ORDER BY TO_NUMBER(WORK_YEAR) DESC , TO_NUMBER(WORK_MONTH) DESC
+    </select>
+</mapper>

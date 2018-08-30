@@ -1,0 +1,21 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.data.mapper.join.LoginMapper">
+    <select id="loginSelectByPk" parameterType="java.lang.String" resultType="com.demo.data.entity.join.LoginEntity">
+        select t1.LOGIN_ID          As username
+               ,t1.LOGIN_PASS       As password
+               ,t1.PASS_EX_DATE     As passExDate
+               ,t1.LAST_LOGIN_DATE  As lastLoginDate
+               ,t1.LOGIN_ID_STATUS  As loginIdStatus
+               ,t2.EMPLOYEE_ID      As employeeId
+               ,t2.FIRST_NAME      As firstName
+               ,t2.LAST_NAME      As lastName
+               ,t3.AUTHORITY        As authority
+        from  LOGIN_MNGMT t1,
+              EMPLOYEE_INFO t2,
+              WEB_AUTH_MNT t3
+        where  t1.LOGIN_ID = #{username}
+           and t1.LOGIN_ID = t2.LOGIN_ID
+           and t2.EMPLOYEE_ID = t3.EMPLOYEE_ID
+    </select>
+</mapper>

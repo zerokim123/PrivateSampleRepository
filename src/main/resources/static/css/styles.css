@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/**
+ * 1. コンテンツを中央に配置します。
+ * 2. 「width vs max-width」を参照してください。
+ * 3. 「Additional Padding」を参照してください。
+ */
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}
+
+body {
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left:  10px;
+}
+
+span {
+	font-weight: bold;
+}
+
+img {
+	width: 260px;
+	height: auto;
+}
+
+a {
+	text-decoration: underline;
+	color: #0080ff;
+	font-size: 18px;
+}
+
+.box {
+	display: inline-block;
+}
+
+.logoparent {
+  position: relative;
+}
+.logout {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-25%);
+}
+
+table {
+    background-color: #cdefff;  /* 背景色指定 */
+}
+
+th,td {
+    border: solid 1px;              /* 枠線指定 */
+}

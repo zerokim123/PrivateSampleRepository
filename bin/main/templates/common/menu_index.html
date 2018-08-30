@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<title>メニュー</title>
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div th:replace="common/header.html::body"></div>
+  <div>
+    ｜<a href="">勤怠登録</a>｜<a href="">勤怠確認</a>｜<a class="btn btn-default" href="/user/userInfo">個人情報</a>｜<a sec:authorize="hasRole('ADMIN') " class="btn btn-default" href="/admin">管理者ページ</a><div class="box" sec:authorize="hasRole('ADMIN') ">｜</div>
+  </div>
+</body>
+</html>
