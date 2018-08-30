@@ -9,12 +9,12 @@ import lombok.ToString;
 @ToString
 public class WorkDateInfoForm {
 
-    private String workYear;
+  private String workYear;
 
-    private String workMonth;
+  private String workMonth;
 
-    private String constName;
+  private String constName;
 
-    private Double workDate;
+  private Double workDate;
 
 }

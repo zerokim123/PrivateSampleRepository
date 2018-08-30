@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.demo.data.entity.join.LoginEntity;
 import com.demo.web.common.service.GetLoginInfoService;
 
@@ -15,18 +14,18 @@ import com.demo.web.common.service.GetLoginInfoService;
 @RequestMapping(value = "/admin")
 public class AdminController {
 
-    @Autowired
-    private GetLoginInfoService getLoginInfo;
+  @Autowired
+  private GetLoginInfoService getLoginInfo;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String index(Model model) {
+  @RequestMapping(method = RequestMethod.GET)
+  public String index(Model model) {
 
-        LoginEntity loginInfo = getLoginInfo.loginInfo();
+    LoginEntity loginInfo = getLoginInfo.loginInfo();
 
-        model.addAttribute("loginInfo",loginInfo);
+    model.addAttribute("loginInfo", loginInfo);
 
-        return "admin/userInfo";
-    }
+    return "admin/userInfo";
+  }
 
 
 }

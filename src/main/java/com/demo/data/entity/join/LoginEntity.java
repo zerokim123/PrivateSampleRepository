@@ -4,16 +4,13 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -25,102 +22,102 @@ import lombok.ToString;
 @ToString
 public class LoginEntity implements UserDetails {
 
-    /**
-     * serialVersionUID.
-     */
-    private static final long serialVersionUID = 1L;
+  /**
+   * serialVersionUID.
+   */
+  private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column
-    private String username;
+  @Id
+  @Column
+  private String username;
 
-    @Column
-    private String password;
+  @Column
+  private String password;
 
-    @Column
-    private Timestamp passExDate;
+  @Column
+  private Timestamp passExDate;
 
-    @Column
-    private Timestamp lastLoginDate;
+  @Column
+  private Timestamp lastLoginDate;
 
-    @Column
-    private String loginIdStatus;
+  @Column
+  private String loginIdStatus;
 
-    @Column
-    private String employeeId;
+  @Column
+  private String employeeId;
 
-    @Column
-    private String authority;
+  @Column
+  private String authority;
 
-    @Column
-    private String lastName;
+  @Column
+  private String lastName;
 
-    @Column
-    private String firstName;
+  @Column
+  private String firstName;
 
-    private String role;
+  private String role;
 
-    private String roleName;
+  private String roleName;
 
-    public String getRole() {
-        return this.role;
-    }
+  public String getRole() {
+    return this.role;
+  }
 
-    public void setRole(String role){
-        this.role = role;
-    }
+  public void setRole(String role) {
+    this.role = role;
+  }
 
-    public String getRoleName() {
-        return this.roleName;
-    }
+  public String getRoleName() {
+    return this.roleName;
+  }
 
-    public void setRoleName(String roleName){
-        this.roleName = roleName;
-    }
+  public void setRoleName(String roleName) {
+    this.roleName = roleName;
+  }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(authority));
+    List<GrantedAuthority> authorities = new ArrayList<>();
+    authorities.add(new SimpleGrantedAuthority(authority));
 
-        return authorities;
-    }
+    return authorities;
+  }
 
-    @Override
-    public String getPassword() {
+  @Override
+  public String getPassword() {
 
-        return this.password;
-    }
+    return this.password;
+  }
 
-    @Override
-    public String getUsername() {
+  @Override
+  public String getUsername() {
 
-        return this.username;
-    }
+    return this.username;
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
+  @Override
+  public boolean isAccountNonExpired() {
 
-        return true;
-    }
+    return true;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
+  @Override
+  public boolean isAccountNonLocked() {
 
-        return true;
-    }
+    return true;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
+  @Override
+  public boolean isCredentialsNonExpired() {
 
-        return true;
-    }
+    return true;
+  }
 
-    @Override
-    public boolean isEnabled() {
+  @Override
+  public boolean isEnabled() {
 
-        return true;
-    }
+    return true;
+  }
 
 }

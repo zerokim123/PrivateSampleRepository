@@ -2,12 +2,10 @@ package com.demo.data.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -19,25 +17,25 @@ import lombok.ToString;
 @ToString
 public class LoginMngmtEntity implements Serializable {
 
-    /**
-     * serialVersionUID.
-     */
-    private static final long serialVersionUID = 9017808521154060501L;
+  /**
+   * serialVersionUID.
+   */
+  private static final long serialVersionUID = 9017808521154060501L;
 
-    @Id
-    @Column
-    private String loginId;
+  @Id
+  @Column
+  private String loginId;
 
-    @Column
-    private String loginPass;
+  @Column
+  private String loginPass;
 
-    @Column
-    private Timestamp passExDate;
+  @Column
+  private Timestamp passExDate;
 
-    @Column
-    private Timestamp lastLoginDate;
+  @Column
+  private Timestamp lastLoginDate;
 
-    @Column
-    private String loginIdStatus;
+  @Column
+  private String loginIdStatus;
 
 }

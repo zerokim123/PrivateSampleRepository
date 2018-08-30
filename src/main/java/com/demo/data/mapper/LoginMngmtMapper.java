@@ -4,5 +4,5 @@ import com.demo.data.entity.LoginMngmtEntity;
 
 public interface LoginMngmtMapper {
 
-	LoginMngmtEntity selectByPkFindAll(LoginMngmtEntity loginMngmtEntity);
+  LoginMngmtEntity selectByPkFindAll(LoginMngmtEntity loginMngmtEntity);
 }

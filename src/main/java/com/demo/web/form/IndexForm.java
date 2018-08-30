@@ -2,7 +2,6 @@ package com.demo.web.form;
 
 
 import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,16 +9,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class IndexForm{
+public class IndexForm {
 
-    private String employeeId;
+  private String employeeId;
 
-    private String firstName;
+  private String firstName;
 
-    private String lastName;
+  private String lastName;
 
-    private String constName;
+  private String constName;
 
-    private List<WorkDateInfoForm>  workDateInfoFormList;
+  private List<WorkDateInfoForm> workDateInfoFormList;
 
 }

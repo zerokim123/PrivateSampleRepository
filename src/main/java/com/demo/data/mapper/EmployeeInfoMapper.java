@@ -4,5 +4,5 @@ import com.demo.data.entity.EmployeeInfoEntity;
 
 public interface EmployeeInfoMapper {
 
-    EmployeeInfoEntity selectByPk(String employeeId);
+  EmployeeInfoEntity selectByPk(String employeeId);
 }

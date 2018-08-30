@@ -4,5 +4,5 @@ import com.demo.data.entity.ConstInfoEntity;
 
 public interface ConstInfoMapper {
 
-    ConstInfoEntity selectByPk(String constCode);
+  ConstInfoEntity selectByPk(String constCode);
 }

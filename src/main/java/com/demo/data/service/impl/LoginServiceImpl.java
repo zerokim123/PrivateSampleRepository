@@ -8,47 +8,46 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import com.demo.data.entity.join.LoginEntity;
 import com.demo.data.mapper.join.LoginMapper;
 
 @Component
-public class LoginServiceImpl implements UserDetailsService{
+public class LoginServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private LoginMapper loginMapper;
+  @Autowired
+  private LoginMapper loginMapper;
 
-    private static String AUTH_CONDE_USER = "0";
+  private static String AUTH_CONDE_USER = "0";
 
-    private static String AUTH_CONDE_ADMIN = "1";
+  private static String AUTH_CONDE_ADMIN = "1";
 
-    private static String AUTH_NAME_USER = "ROLE_USER";
+  private static String AUTH_NAME_USER = "ROLE_USER";
 
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+  @Override
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        if (StringUtils.isEmpty(username)) {
-            throw new UsernameNotFoundException("");
-        }
-
-        LoginEntity user = loginMapper.loginSelectByPk(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("");
-        }
-
-        PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        if (AUTH_NAME_USER.equals(user.getAuthority())) {
-
-            user.setRole(AUTH_CONDE_USER);
-
-        } else {
-            user.setRole(AUTH_CONDE_ADMIN);
-        }
-
-        return user;
+    if (StringUtils.isEmpty(username)) {
+      throw new UsernameNotFoundException("");
     }
+
+    LoginEntity user = loginMapper.loginSelectByPk(username);
+    if (user == null) {
+      throw new UsernameNotFoundException("");
+    }
+
+    PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
+    if (AUTH_NAME_USER.equals(user.getAuthority())) {
+
+      user.setRole(AUTH_CONDE_USER);
+
+    } else {
+      user.setRole(AUTH_CONDE_ADMIN);
+    }
+
+    return user;
+  }
 
 }
